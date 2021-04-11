@@ -1,6 +1,8 @@
 package com.course.kafka.entity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -9,6 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "order")
 @Data
+@Builder
+@NoArgsConstructor
 public class Order
 {
     @Id

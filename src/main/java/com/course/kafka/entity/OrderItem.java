@@ -1,6 +1,7 @@
 package com.course.kafka.entity;
 
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "order_item")
 @Data
+@Builder
 public class OrderItem
 {
     @Id

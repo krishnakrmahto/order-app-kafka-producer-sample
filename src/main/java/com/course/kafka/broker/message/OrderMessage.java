@@ -1,10 +1,12 @@
 package com.course.kafka.broker.message;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 public class OrderMessage
 {
     private int orderId;
@@ -19,7 +21,7 @@ public class OrderMessage
 
     private int id;
 
-    private String name;
+    private String itemName;
 
     private int price;
 
