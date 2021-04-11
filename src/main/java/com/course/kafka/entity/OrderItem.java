@@ -1,8 +1,10 @@
 package com.course.kafka.entity;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -10,6 +12,8 @@ import javax.persistence.*;
 @Table(name = "order_item")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderItem
 {
     @Id
@@ -26,6 +30,6 @@ public class OrderItem
     private int quantity;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "order_id")
     private Order order;
 }

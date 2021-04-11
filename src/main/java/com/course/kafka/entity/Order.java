@@ -1,5 +1,6 @@
 package com.course.kafka.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.List;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Order
 {
     @Id
@@ -31,6 +33,6 @@ public class Order
     @Column(nullable = false, length = 20)
     private String creditCardNumber;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
     private List<OrderItem> orderItems;
 }
