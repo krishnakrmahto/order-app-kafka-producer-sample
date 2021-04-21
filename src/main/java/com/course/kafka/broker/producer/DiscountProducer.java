@@ -15,7 +15,7 @@ public class DiscountProducer
 
     public void publish(DiscountMessage message)
     {
-        kafkaTemplate.send("t.commodity.promotion.and.discount", message)
+        kafkaTemplate.send("t.commodity.promotion", message)
         .addCallback(result -> log.info("DiscountMessage published successfully, result: {}", result),
                      e -> log.error("Error while publishing DiscountMessage: {}", message, e));
     }
