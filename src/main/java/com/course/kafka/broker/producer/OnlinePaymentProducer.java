@@ -13,6 +13,6 @@ public class OnlinePaymentProducer
 
     public void publish(OnlinePaymentMessage message)
     {
-        kafkaTemplate.send("t.commodity.online-payment", null, message.getOnlineOrderNumber(), message);
+        kafkaTemplate.send("t.commodity.online-payment", message.getOnlineOrderNumber(), message);
     }
 }
