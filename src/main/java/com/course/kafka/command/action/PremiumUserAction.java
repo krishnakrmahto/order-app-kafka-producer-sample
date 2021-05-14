@@ -14,6 +14,6 @@ public class PremiumUserAction
 
     public void publishToKafka(PremiumUserRequest request)
     {
-        producer.publish(new PremiumUserMessage(request.getUsername(), request.getLevel()));
+        producer.produce(new PremiumUserMessage(request.getLevel(), request.getUsername()));
     }
 }

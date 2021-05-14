@@ -11,7 +11,7 @@ public class PremiumUserProducer
 {
     private final KafkaTemplate<String, PremiumUserMessage> kafkaTemplate;
 
-    public void publish(PremiumUserMessage message)
+    public void produce(PremiumUserMessage message)
     {
         kafkaTemplate.send("t.commodity.premium-user", message.getUsername(), message);
     }
